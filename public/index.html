@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Z Call</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <main class="app">
+    <section id="join-screen" class="join-screen">
+      <div class="brand">Z Call</div>
+      <div class="join-card">
+        <div class="logo">Z</div>
+        <h1>One link. One call.</h1>
+        <p>Everyone who opens this link joins the same call.</p>
+        <input id="name-input" maxlength="32" placeholder="Your name" autocomplete="name">
+        <button id="join-btn">Join call</button>
+        <div id="join-error" class="error"></div>
+      </div>
+    </section>
+
+    <section id="call-screen" class="call-screen hidden">
+      <header class="topbar">
+        <div class="brand">Z Call</div>
+        <div class="status"><span class="dot"></span><span id="participant-count">0</span> in call</div>
+        <button id="copy-link" class="secondary">Copy invite link</button>
+      </header>
+
+      <div class="content">
+        <div id="video-grid" class="video-grid"></div>
+        <aside class="chat">
+          <div class="chat-header">In-call chat</div>
+          <div id="messages" class="messages"></div>
+          <form id="chat-form" class="chat-form">
+            <input id="chat-input" maxlength="500" placeholder="Message everyone…">
+            <button>Send</button>
+          </form>
+        </aside>
+      </div>
+
+      <div class="controls">
+        <button id="mute-btn" class="control">🎙️ <span>Mute</span></button>
+        <button id="camera-btn" class="control">📷 <span>Camera</span></button>
+        <button id="screen-btn" class="control">🖥️ <span>Share screen</span></button>
+        <button id="leave-btn" class="control danger">↪ <span>Leave</span></button>
+      </div>
+    </section>
+  </main>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/app.js"></script>
+</body>
+</html>
